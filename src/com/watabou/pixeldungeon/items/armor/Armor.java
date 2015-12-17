@@ -30,7 +30,7 @@ import com.watabou.pixeldungeon.sprites.HeroSprite;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
@@ -328,7 +328,7 @@ public class Armor extends EquipableItem {
 		return glyph != null ? glyph.glowing() : null;
 	}
 	
-	public static abstract class Glyph implements Bundlable {
+	public static abstract class Glyph implements IBundlable {
 		
 		private static final Class<?>[] glyphs = new Class<?>[]{ 
 			Bounce.class, Affection.class, AntiEntropy.class, Multiplicity.class, 

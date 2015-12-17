@@ -28,7 +28,7 @@ import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
@@ -222,7 +222,7 @@ abstract public class Weapon extends KindOfWeapon {
 		return enchantment != null ? enchantment.glowing() : null;
 	}
 	
-	public static abstract class Enchantment implements Bundlable {
+	public static abstract class Enchantment implements IBundlable {
 		
 		private static final Class<?>[] enchants = new Class<?>[]{ 
 			Fire.class, Poison.class, Death.class, Paralysis.class, Leech.class, 

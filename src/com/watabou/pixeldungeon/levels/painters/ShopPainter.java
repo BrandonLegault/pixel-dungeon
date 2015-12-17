@@ -30,9 +30,7 @@ import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.Torch;
 import com.watabou.pixeldungeon.items.Weightstone;
 import com.watabou.pixeldungeon.items.armor.*;
-import com.watabou.pixeldungeon.items.bags.ScrollHolder;
-import com.watabou.pixeldungeon.items.bags.SeedPouch;
-import com.watabou.pixeldungeon.items.bags.WandHolster;
+import com.watabou.pixeldungeon.items.bags.*;
 import com.watabou.pixeldungeon.items.food.OverpricedRation;
 import com.watabou.pixeldungeon.items.potions.PotionOfHealing;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfIdentify;
@@ -90,6 +88,8 @@ public class ShopPainter extends Painter {
 		
 		ArrayList<Item> items = new ArrayList<Item>();
 		
+		boolean addCooler = Dungeon.depth > 6 && Dungeon.depth < 21 && Random.Int( 2 ) == 0;
+		
 		switch (Dungeon.depth) {
 		
 		case 6:
@@ -129,8 +129,12 @@ public class ShopPainter extends Painter {
 			items.add( new Torch() );
 			break;
 		}
+
+		if (addCooler)
+			items.add( new Cooler() );
 		
 		items.add( new PotionOfHealing() );
+		
 		for (int i=0; i < 3; i++) {
 			items.add( Generator.random( Generator.Category.POTION ) );
 		}

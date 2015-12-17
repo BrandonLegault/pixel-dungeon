@@ -26,7 +26,7 @@ import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.windows.WndBag;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 
 public class Bag extends Item implements Iterable<Item> {
@@ -115,7 +115,7 @@ public class Bag extends Item implements Iterable<Item> {
 	@Override
 	public void restoreFromBundle( Bundle bundle ) {
 		super.restoreFromBundle( bundle );
-		for (Bundlable item : bundle.getCollection( ITEMS )) {
+		for (IBundlable item : bundle.getCollection( ITEMS )) {
 			((Item)item).collect( this );
 		};
 	}

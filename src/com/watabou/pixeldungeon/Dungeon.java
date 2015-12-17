@@ -64,7 +64,7 @@ import com.watabou.pixeldungeon.ui.QuickSlot;
 import com.watabou.pixeldungeon.utils.BArray;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.pixeldungeon.windows.WndResurrect;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
@@ -140,6 +140,7 @@ public class Dungeon {
 		Badges.reset();
 		
 		StartScene.curClass.initHero( hero );
+		
 	}
 	
 	public static boolean isChallenged( int mask ) {
@@ -527,7 +528,7 @@ public class Dungeon {
 		droppedItems = new SparseArray<ArrayList<Item>>();
 		for (int i=2; i <= Statistics.deepestFloor + 1; i++) {
 			ArrayList<Item> dropped = new ArrayList<Item>();
-			for (Bundlable b : bundle.getCollection( String.format( DROPPED, i ) ) ) {
+			for (IBundlable b : bundle.getCollection( String.format( DROPPED, i ) ) ) {
 				dropped.add( (Item)b );
 			}
 			if (!dropped.isEmpty()) {

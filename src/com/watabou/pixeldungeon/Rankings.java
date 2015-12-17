@@ -27,7 +27,7 @@ import java.util.Comparator;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.SystemTime;
 
@@ -133,7 +133,7 @@ public enum Rankings {
 			Bundle bundle = Bundle.read( input );
 			input.close();
 			
-			for (Bundlable record : bundle.getCollection( RECORDS )) {
+			for (IBundlable record : bundle.getCollection( RECORDS )) {
 				records.add( (Record)record );
 			}			
 			lastRecord = bundle.getInt( LATEST );
@@ -156,7 +156,7 @@ public enum Rankings {
 		}
 	}
 	
-	public static class Record implements Bundlable {
+	public static class Record implements IBundlable {
 		
 		private static final String REASON	= "reason";
 		private static final String WIN		= "win";

@@ -28,10 +28,10 @@ import com.watabou.pixeldungeon.actors.blobs.Blob;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 
-public abstract class Actor implements Bundlable {
+public abstract class Actor implements IBundlable {
 	
 	public static final float TICK	= 1f;
 

@@ -36,11 +36,11 @@ import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.levels.Terrain;
 import com.watabou.pixeldungeon.sprites.PlantSprite;
 import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
-public class Plant implements Bundlable {
+public class Plant implements IBundlable {
 
 	public String plantName;
 	

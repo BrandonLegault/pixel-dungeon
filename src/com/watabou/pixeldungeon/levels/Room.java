@@ -26,14 +26,14 @@ import java.util.HashSet;
 
 import com.watabou.pixeldungeon.PixelDungeon;
 import com.watabou.pixeldungeon.levels.painters.*;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Graph;
 import com.watabou.utils.Point;
 import com.watabou.utils.Random;
 import com.watabou.utils.Rect;
 
-public class Room extends Rect implements Graph.Node, Bundlable {
+public class Room extends Rect implements Graph.Node, IBundlable {
 	
 	public HashSet<Room> neigbours = new HashSet<Room>();
 	public HashMap<Room, Door> connected = new HashMap<Room, Door>();

@@ -46,11 +46,11 @@ import com.watabou.pixeldungeon.plants.Plant.Seed;
 import com.watabou.pixeldungeon.sprites.ItemSprite;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
-public class Heap implements Bundlable {
+public class Heap implements IBundlable {
 
 	private static final String TXT_MIMIC = "This is a mimic!";
 	

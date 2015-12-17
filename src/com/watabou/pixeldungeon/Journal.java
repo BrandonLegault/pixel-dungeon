@@ -19,7 +19,7 @@ package com.watabou.pixeldungeon;
 
 import java.util.ArrayList;
 
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 
 public class Journal {
@@ -45,7 +45,7 @@ public class Journal {
 		}
 	};
 	
-	public static class Record implements Comparable<Record>, Bundlable {
+	public static class Record implements Comparable<Record>, IBundlable {
 		
 		private static final String FEATURE	= "feature";
 		private static final String DEPTH	= "depth";
@@ -93,7 +93,7 @@ public class Journal {
 	
 	public static void restoreFromBundle( Bundle bundle ) {
 		records = new ArrayList<Record>();
-		for (Bundlable rec : bundle.getCollection( JOURNAL ) ) {
+		for (IBundlable rec : bundle.getCollection( JOURNAL ) ) {
 			records.add( (Record) rec );
 		}
 	}

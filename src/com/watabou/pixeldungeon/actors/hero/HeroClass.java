@@ -22,6 +22,7 @@ import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.items.TomeOfMastery;
 import com.watabou.pixeldungeon.items.armor.ClothArmor;
 import com.watabou.pixeldungeon.items.bags.Keyring;
+import com.watabou.pixeldungeon.items.bags.Cooler;
 import com.watabou.pixeldungeon.items.food.Food;
 import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
 import com.watabou.pixeldungeon.items.rings.RingOfShadows;
@@ -132,8 +133,8 @@ public enum HeroClass {
 	
 	private static void initWarrior( Hero hero ) {
 		hero.STR = hero.STR + 1;
-		
 		(hero.belongings.weapon = new ShortSword()).identify();
+		
 		new Dart( 8 ).identify().collect();
 		
 		QuickSlot.primaryValue = Dart.class;

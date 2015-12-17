@@ -50,7 +50,8 @@ public enum Icons {
 	EXIT,
 	CHALLENGE_OFF,
 	CHALLENGE_ON,
-	RESUME;
+	RESUME,
+	COOLER;
 	
 	public Image get() {
 		return get( this );
@@ -121,6 +122,9 @@ public enum Icons {
 			break;
 		case WAND_HOLSTER:
 			icon.frame( icon.texture.uvRect( 88, 0, 98, 10 ) );
+			break;
+		case COOLER:
+			icon.frame( icon.texture.uvRect( 58, 0, 68, 10 ) );
 			break;
 		case KEYRING:
 			icon.frame( icon.texture.uvRect( 64, 29, 74, 39 ) );

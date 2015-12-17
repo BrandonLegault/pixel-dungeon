@@ -46,12 +46,12 @@ import com.watabou.pixeldungeon.sprites.MissileSprite;
 import com.watabou.pixeldungeon.ui.QuickSlot;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Callback;
 import com.watabou.utils.PointF;
 
-public class Item implements Bundlable {
+public class Item implements IBundlable {
 
 	private static final String TXT_PACK_FULL	= "Your pack is too full for the %s";
 	

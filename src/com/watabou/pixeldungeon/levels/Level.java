@@ -67,12 +67,12 @@ import com.watabou.pixeldungeon.mechanics.ShadowCaster;
 import com.watabou.pixeldungeon.plants.Plant;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Bundlable;
+import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 import com.watabou.utils.SparseArray;
 
-public abstract class Level implements Bundlable {
+public abstract class Level implements IBundlable {
 	
 	public static enum Feeling {
 		NONE,
@@ -237,8 +237,8 @@ public abstract class Level implements Bundlable {
 		
 		adjustMapSize();
 		
-		Collection<Bundlable> collection = bundle.getCollection( HEAPS );
-		for (Bundlable h : collection) {
+		Collection<IBundlable> collection = bundle.getCollection( HEAPS );
+		for (IBundlable h : collection) {
 			Heap heap = (Heap)h;
 			if (resizingNeeded) {
 				heap.pos = adjustPos( heap.pos );
@@ -247,7 +247,7 @@ public abstract class Level implements Bundlable {
 		}
 		
 		collection = bundle.getCollection( PLANTS );
-		for (Bundlable p : collection) {
+		for (IBundlable p : collection) {
 			Plant plant = (Plant)p;
 			if (resizingNeeded) {
 				plant.pos = adjustPos( plant.pos );
@@ -256,7 +256,7 @@ public abstract class Level implements Bundlable {
 		}
 		
 		collection = bundle.getCollection( MOBS );
-		for (Bundlable m : collection) {
+		for (IBundlable m : collection) {
 			Mob mob = (Mob)m;
 			if (mob != null) {
 				if (resizingNeeded) {
@@ -267,7 +267,7 @@ public abstract class Level implements Bundlable {
 		}
 		
 		collection = bundle.getCollection( BLOBS );
-		for (Bundlable b : collection) {
+		for (IBundlable b : collection) {
 			Blob blob = (Blob)b;
 			blobs.put( blob.getClass(), blob );
 		}
