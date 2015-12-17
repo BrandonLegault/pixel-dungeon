@@ -40,7 +40,7 @@ import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
-public class Burning extends Buff implements Hero.Doom {
+public class Burning extends Buff implements Hero.IDoom {
 
 	private static final String TXT_BURNS_UP		= "%s burns up!";
 	private static final String TXT_BURNED_TO_DEATH	= "You burned to death...";

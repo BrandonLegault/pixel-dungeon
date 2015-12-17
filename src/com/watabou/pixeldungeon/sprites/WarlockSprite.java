@@ -22,7 +22,7 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.actors.mobs.Warlock;
 import com.watabou.pixeldungeon.effects.MagicMissile;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class WarlockSprite extends MobSprite {
 	
@@ -56,7 +56,7 @@ public class WarlockSprite extends MobSprite {
 		play( zap );
 		
 		MagicMissile.shadow( parent, ch.pos, cell, 
-			new Callback() {			
+			new ICallback() {			
 				@Override
 				public void call() {
 					((Warlock)ch).onZapComplete();

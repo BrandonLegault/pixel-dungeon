@@ -46,7 +46,7 @@ import com.watabou.pixeldungeon.items.wands.Wand;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class Badges {
 	
@@ -170,7 +170,7 @@ public class Badges {
 	
 	private static boolean saveNeeded = false;
 	
-	public static Callback loadingListener = null;
+	public static ICallback loadingListener = null;
 	
 	public static void reset() {
 		local.clear();

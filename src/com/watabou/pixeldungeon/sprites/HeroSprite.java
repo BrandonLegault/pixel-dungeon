@@ -28,7 +28,7 @@ import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class HeroSprite extends CharSprite {
 	
@@ -97,13 +97,13 @@ public class HeroSprite extends CharSprite {
 	}
 	
 	@Override
-	public void jump( int from, int to, Callback callback ) {	
+	public void jump( int from, int to, ICallback callback ) {	
 		super.jump( from, to, callback );
 		play( fly );
 	}
 	
 	public void read() {
-		animCallback = new Callback() {
+		animCallback = new ICallback() {
 			@Override
 			public void call() {
 				idle();

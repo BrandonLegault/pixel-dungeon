@@ -33,7 +33,7 @@ import com.watabou.utils.Point;
 import com.watabou.utils.Random;
 import com.watabou.utils.Rect;
 
-public class Room extends Rect implements Graph.Node, IBundlable {
+public class Room extends Rect implements Graph.INode, IBundlable {
 	
 	public HashSet<Room> neigbours = new HashSet<Room>();
 	public HashMap<Room, Door> connected = new HashMap<Room, Door>();

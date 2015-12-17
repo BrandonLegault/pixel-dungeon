@@ -72,7 +72,7 @@ public class WndBag extends WndTabbed {
 	
 	protected static final int TITLE_HEIGHT	= 12;
 	
-	private Listener listener;
+	private IListener listener;
 	private WndBag.Mode mode;
 	private String title;
 	
@@ -86,7 +86,7 @@ public class WndBag extends WndTabbed {
 	private static Mode lastMode;
 	private static Bag lastBag;
 	
-	public WndBag( Bag bag, Listener listener, Mode mode, String title ) {
+	public WndBag( Bag bag, IListener listener, Mode mode, String title ) {
 		
 		super();
 		
@@ -134,7 +134,7 @@ public class WndBag extends WndTabbed {
 		}
 	}
 	
-	public static WndBag lastBag( Listener listener, Mode mode, String title ) {
+	public static WndBag lastBag( IListener listener, Mode mode, String title ) {
 		
 		if (mode == lastMode && lastBag != null && 
 			Dungeon.hero.belongings.backpack.contains( lastBag )) {
@@ -148,7 +148,7 @@ public class WndBag extends WndTabbed {
 		}
 	}
 	
-	public static WndBag seedPouch( Listener listener, Mode mode, String title ) {
+	public static WndBag seedPouch( IListener listener, Mode mode, String title ) {
 		SeedPouch pouch = Dungeon.hero.belongings.getItem( SeedPouch.class );
 		return pouch != null ?
 			new WndBag( pouch, listener, mode, title ) :
@@ -436,7 +436,7 @@ public class WndBag extends WndTabbed {
 		}
 	}
 	
-	public interface Listener {
+	public interface IListener {
 		void onSelect( Item item );
 	}
 }

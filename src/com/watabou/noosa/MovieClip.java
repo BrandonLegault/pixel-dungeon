@@ -28,7 +28,7 @@ public class MovieClip extends Image {
 	
 	public boolean paused = false;
 
-	public Listener listener;
+	public IListener listener;
 	
 	public MovieClip() {
 		super();
@@ -129,7 +129,7 @@ public class MovieClip extends Image {
 		}
 	}
 	
-	public interface Listener {
+	public interface IListener {
 		void onComplete( Animation anim );
 	}
 }

@@ -28,7 +28,7 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.DungeonTilemap;
 import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.Random;
 
 public class Lightning extends Group {
@@ -44,9 +44,9 @@ public class Lightning extends Group {
 	private Image[] arcsS;
 	private Image[] arcsE;
 	
-	private Callback callback;
+	private ICallback callback;
 	
-	public Lightning( int[] cells, int length, Callback callback ) {
+	public Lightning( int[] cells, int length, ICallback callback ) {
 		
 		super();
 		

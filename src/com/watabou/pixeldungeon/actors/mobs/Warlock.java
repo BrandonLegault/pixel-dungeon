@@ -32,10 +32,10 @@ import com.watabou.pixeldungeon.sprites.CharSprite;
 import com.watabou.pixeldungeon.sprites.WarlockSprite;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.Random;
 
-public class Warlock extends Mob implements Callback {
+public class Warlock extends Mob implements ICallback {
 	
 	private static final float TIME_TO_ZAP	= 1f;
 	

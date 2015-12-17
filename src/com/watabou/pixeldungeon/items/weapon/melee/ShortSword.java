@@ -100,7 +100,7 @@ public class ShortSword extends MeleeWeapon {
 			"It is indeed quite short, just a few inches longer, than a dagger.";
 	}
 	
-	private final WndBag.Listener itemSelector = new WndBag.Listener() {
+	private final WndBag.IListener itemSelector = new WndBag.IListener() {
 		@Override
 		public void onSelect( Item item ) {
 			if (item != null && !(item instanceof Boomerang)) {

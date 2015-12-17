@@ -123,7 +123,7 @@ public class WandOfMagicMissile extends Wand {
 			"This wand launches missiles of pure magical energy, dealing moderate damage to a target creature.";
 	}
 	
-	private final WndBag.Listener itemSelector = new WndBag.Listener() {
+	private final WndBag.IListener itemSelector = new WndBag.IListener() {
 		@Override
 		public void onSelect( Item item ) {
 			if (item != null) {

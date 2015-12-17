@@ -68,7 +68,7 @@ public abstract class InventoryScroll extends Scroll {
 	protected abstract void onItemSelected( Item item );
 	
 	protected static boolean identifiedByUse = false;
-	protected static WndBag.Listener itemSelector = new WndBag.Listener() {
+	protected static WndBag.IListener itemSelector = new WndBag.IListener() {
 		@Override
 		public void onSelect( Item item ) {
 			if (item != null) {

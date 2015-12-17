@@ -36,7 +36,7 @@ import com.watabou.pixeldungeon.scenes.CellSelector;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class WarriorArmor extends ClassArmor {
 	
@@ -79,7 +79,7 @@ public class WarriorArmor extends ClassArmor {
 			"a targeted location, slamming down to stun all neighbouring enemies.";
 	}
 	
-	protected static CellSelector.Listener leaper = new  CellSelector.Listener() {
+	protected static CellSelector.IListener leaper = new  CellSelector.IListener() {
 		
 		@Override
 		public void onSelect( Integer target ) {
@@ -99,7 +99,7 @@ public class WarriorArmor extends ClassArmor {
 				
 				final int dest = cell;
 				curUser.busy();
-				curUser.sprite.jump( curUser.pos, cell, new Callback() {
+				curUser.sprite.jump( curUser.pos, cell, new ICallback() {
 					@Override
 					public void call() {
 						curUser.move( dest );

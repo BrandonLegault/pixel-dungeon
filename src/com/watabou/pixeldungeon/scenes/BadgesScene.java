@@ -34,7 +34,7 @@ import com.watabou.pixeldungeon.ui.Archs;
 import com.watabou.pixeldungeon.ui.ExitButton;
 import com.watabou.pixeldungeon.ui.Window;
 import com.watabou.pixeldungeon.windows.WndBadge;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.Random;
 
 public class BadgesScene extends PixelScene {
@@ -97,7 +97,7 @@ public class BadgesScene extends PixelScene {
 		
 		fadeIn();
 		
-		Badges.loadingListener = new Callback() {
+		Badges.loadingListener = new ICallback() {
 			@Override
 			public void call() {
 				if (Game.scene() == BadgesScene.this) {

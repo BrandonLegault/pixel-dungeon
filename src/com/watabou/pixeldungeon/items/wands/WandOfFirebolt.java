@@ -34,7 +34,7 @@ import com.watabou.pixeldungeon.mechanics.Ballistica;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.Random;
 
 public class WandOfFirebolt extends Wand {
@@ -72,7 +72,7 @@ public class WandOfFirebolt extends Wand {
 		}
 	}
 	
-	protected void fx( int cell, Callback callback ) {
+	protected void fx( int cell, ICallback callback ) {
 		MagicMissile.fire( curUser.sprite.parent, curUser.pos, cell, callback );
 		Sample.INSTANCE.play( Assets.SND_ZAP );
 	}

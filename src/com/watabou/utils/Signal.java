@@ -21,7 +21,7 @@ import java.util.LinkedList;
 
 public class Signal<T> {
 
-	private LinkedList<Listener<T>> listeners = new LinkedList<Signal.Listener<T>>();
+	private LinkedList<IListener<T>> listeners = new LinkedList<Signal.IListener<T>>();
 	
 	private boolean canceled;
 	
@@ -35,7 +35,7 @@ public class Signal<T> {
 		this.stackMode = stackMode;
 	}
 	
-	public void add( Listener<T> listener ) {
+	public void add( IListener<T> listener ) {
 		if (!listeners.contains( listener )) {
 			if (stackMode) {
 				listeners.addFirst( listener );
@@ -45,7 +45,7 @@ public class Signal<T> {
 		}
 	}
 	
-	public void remove( Listener<T> listener ) {
+	public void remove( IListener<T> listener ) {
 		listeners.remove( listener );
 	}
 	
@@ -53,7 +53,7 @@ public class Signal<T> {
 		listeners.clear();
 	}
 	
-	public void replace( Listener<T> listener ) {
+	public void replace( IListener<T> listener ) {
 		removeAll();
 		add( listener );
 	}
@@ -65,12 +65,12 @@ public class Signal<T> {
 	public void dispatch( T t ) {
 		
 		@SuppressWarnings("unchecked")
-		Listener<T>[] list = listeners.toArray( new Listener[0] );
+		IListener<T>[] list = listeners.toArray( new IListener[0] );
 		
 		canceled = false;
 		for (int i=0; i < list.length; i++) {
 			
-			Listener<T> listener = list[i];
+			IListener<T> listener = list[i];
 			
 			if (listeners.contains( listener )) {
 				listener.onSignal( t );
@@ -86,7 +86,7 @@ public class Signal<T> {
 		canceled = true;
 	}
 	
-	public static interface Listener<T> {
+	public static interface IListener<T> {
 		public void onSignal( T t );
 	}
 }

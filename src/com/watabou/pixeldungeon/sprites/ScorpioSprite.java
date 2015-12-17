@@ -21,7 +21,7 @@ import com.watabou.noosa.TextureFilm;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.items.weapon.missiles.Dart;
 import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class ScorpioSprite extends MobSprite {
 	
@@ -77,7 +77,7 @@ public class ScorpioSprite extends MobSprite {
 			idle();
 			
 			((MissileSprite)parent.recycle( MissileSprite.class )).
-			reset( ch.pos, cellToAttack, new Dart(), new Callback() {			
+			reset( ch.pos, cellToAttack, new Dart(), new ICallback() {			
 				@Override
 				public void call() {
 					ch.onAttackComplete();

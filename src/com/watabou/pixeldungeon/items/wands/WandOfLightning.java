@@ -32,7 +32,7 @@ import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.levels.traps.LightningTrap;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.Random;
 
 public class WandOfLightning extends Wand {
@@ -87,7 +87,7 @@ public class WandOfLightning extends Wand {
 	}
 	
 	@Override
-	protected void fx( int cell, Callback callback ) {
+	protected void fx( int cell, ICallback callback ) {
 		
 		nPoints = 0;
 		points[nPoints++] = Dungeon.hero.pos;

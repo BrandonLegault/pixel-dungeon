@@ -37,7 +37,7 @@ import com.watabou.pixeldungeon.sprites.ItemSprite.Glowing;
 import com.watabou.pixeldungeon.ui.BuffIndicator;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class Pickaxe extends Weapon {
 	
@@ -97,7 +97,7 @@ public class Pickaxe extends Weapon {
 					hero.spend( TIME_TO_MINE );
 					hero.busy();
 					
-					hero.sprite.attack( pos, new Callback() {
+					hero.sprite.attack( pos, new ICallback() {
 						
 						@Override
 						public void call() {

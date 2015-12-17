@@ -38,7 +38,7 @@ import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.CharSprite;
 import com.watabou.pixeldungeon.sprites.GooSprite;
 import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.Random;
 
 public class Goo extends Mob {
@@ -122,7 +122,7 @@ public class Goo extends Mob {
 				if (Ballistica.cast( pos, enemy.pos, false, true ) == enemy.pos) {
 					final int dest = Ballistica.trace[Ballistica.distance - 2];
 					
-					Callback afterJump = new Callback() {
+					ICallback afterJump = new ICallback() {
 						@Override
 						public void call() {
 							move( dest );

@@ -42,7 +42,7 @@ import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.pixeldungeon.ui.QuickSlot;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.Random;
 
 public abstract class Wand extends KindOfWeapon {
@@ -341,7 +341,7 @@ public abstract class Wand extends KindOfWeapon {
 		return (tier * tier - tier + 10) / 2 + level;
 	}
 	
-	protected void fx( int cell, Callback callback ) {
+	protected void fx( int cell, ICallback callback ) {
 		MagicMissile.blueLight( curUser.sprite.parent, curUser.pos, cell, callback );
 		Sample.INSTANCE.play( Assets.SND_ZAP );
 	}
@@ -407,7 +407,7 @@ public abstract class Wand extends KindOfWeapon {
 		curChargeKnown = bundle.getBoolean( CUR_CHARGE_KNOWN );
 	}
 	
-	protected static CellSelector.Listener zapper = new  CellSelector.Listener() {
+	protected static CellSelector.IListener zapper = new  CellSelector.IListener() {
 		
 		@Override
 		public void onSelect( Integer target ) {
@@ -432,7 +432,7 @@ public abstract class Wand extends KindOfWeapon {
 					
 					curUser.busy();
 					
-					curWand.fx( cell, new Callback() {
+					curWand.fx( cell, new ICallback() {
 						@Override
 						public void call() {
 							curWand.onZap( cell );

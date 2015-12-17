@@ -113,7 +113,7 @@ public class Weightstone extends Item {
 			"Using a weightstone, you can balance your melee weapon to increase its speed or accuracy.";
 	}
 	
-	private final WndBag.Listener itemSelector = new WndBag.Listener() {
+	private final WndBag.IListener itemSelector = new WndBag.IListener() {
 		@Override
 		public void onSelect( Item item ) {
 			if (item != null) {

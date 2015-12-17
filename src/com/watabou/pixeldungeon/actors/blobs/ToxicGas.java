@@ -29,7 +29,7 @@ import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Random;
 
-public class ToxicGas extends Blob implements Hero.Doom {
+public class ToxicGas extends Blob implements Hero.IDoom {
 	
 	@Override
 	protected void evolve() {

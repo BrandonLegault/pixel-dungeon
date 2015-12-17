@@ -28,7 +28,7 @@ import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Signal;
 
-public class GameLog extends Component implements Signal.Listener<String> {
+public class GameLog extends Component implements Signal.IListener<String> {
 
 	private static final int MAX_LINES = 3;
 	

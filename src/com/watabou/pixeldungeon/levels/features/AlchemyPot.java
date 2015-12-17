@@ -37,7 +37,7 @@ public class AlchemyPot {
 		GameScene.selectItem( itemSelector, WndBag.Mode.SEED, TXT_SELECT_SEED );
 	}
 	
-	private static final WndBag.Listener itemSelector = new WndBag.Listener() {
+	private static final WndBag.IListener itemSelector = new WndBag.IListener() {
 		@Override
 		public void onSelect( Item item ) {
 			if (item != null) {

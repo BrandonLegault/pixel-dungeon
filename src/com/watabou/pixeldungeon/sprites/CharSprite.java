@@ -38,11 +38,11 @@ import com.watabou.pixeldungeon.items.potions.PotionOfInvisibility;
 import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.PointF;
 import com.watabou.utils.Random;
 
-public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip.Listener {
+public class CharSprite extends MovieClip implements Tweener.IListener, MovieClip.IListener {
 	
 	public static final int DEFAULT		= 0xFFFFFF;
 	public static final int POSITIVE	= 0x00FF00;
@@ -64,7 +64,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected Animation zap;
 	protected Animation die;
 	
-	protected Callback animCallback;
+	protected ICallback animCallback;
 	
 	protected Tweener motion;
 	
@@ -77,7 +77,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 	protected EmoIcon emo;
 	
 	private Tweener jumpTweener;
-	private Callback jumpCallback;
+	private ICallback jumpCallback;
 	
 	private float flashTime = 0;
 	
@@ -162,7 +162,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 		play( attack );
 	}
 	
-	public void attack( int cell, Callback callback ) {
+	public void attack( int cell, ICallback callback ) {
 		animCallback = callback;
 		turnTo( ch.pos, cell );
 		play( attack );
@@ -188,7 +188,7 @@ public class CharSprite extends MovieClip implements Tweener.Listener, MovieClip
 		}
 	}
 	
-	public void jump( int from, int to, Callback callback ) {	
+	public void jump( int from, int to, ICallback callback ) {	
 		jumpCallback = callback;
 		
 		int distance = Level.distance( from, to );

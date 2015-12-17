@@ -26,7 +26,7 @@ import com.watabou.utils.PointF;
 
 public class CellSelector extends TouchArea {
 
-	public Listener listener = null;
+	public IListener listener = null;
 	
 	public boolean enabled;
 	
@@ -150,7 +150,7 @@ public class CellSelector extends TouchArea {
 		GameScene.ready();
 	}
 	
-	public interface Listener {
+	public interface IListener {
 		void onSelect( Integer cell );
 		String prompt();
 	}

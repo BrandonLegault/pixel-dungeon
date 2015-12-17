@@ -579,7 +579,7 @@ public class GameScene extends PixelScene {
 		cellSelector.select( cell );
 	}
 	
-	public static void selectCell( CellSelector.Listener listener ) {
+	public static void selectCell( CellSelector.IListener listener ) {
 		cellSelector.listener = listener;
 		scene.prompt( listener.prompt() );
 	}
@@ -593,7 +593,7 @@ public class GameScene extends PixelScene {
 		}
 	}
 	
-	public static WndBag selectItem( WndBag.Listener listener, WndBag.Mode mode, String title ) {
+	public static WndBag selectItem( WndBag.IListener listener, WndBag.Mode mode, String title ) {
 		cancelCellSelector();
 		
 		WndBag wnd = mode == Mode.SEED ?
@@ -623,7 +623,7 @@ public class GameScene extends PixelScene {
 		QuickSlot.cancel();
 	}
 	
-	private static final CellSelector.Listener defaultCellListener = new CellSelector.Listener() {
+	private static final CellSelector.IListener defaultCellListener = new CellSelector.IListener() {
 		@Override
 		public void onSelect( Integer cell ) {
 			if (Dungeon.hero.handle( cell )) {

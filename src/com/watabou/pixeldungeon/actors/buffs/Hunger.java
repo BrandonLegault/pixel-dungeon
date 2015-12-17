@@ -29,7 +29,7 @@ import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
-public class Hunger extends Buff implements Hero.Doom {
+public class Hunger extends Buff implements Hero.IDoom {
 
 	private static final float STEP	= 10f;
 	

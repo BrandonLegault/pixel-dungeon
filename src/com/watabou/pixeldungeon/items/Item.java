@@ -48,7 +48,7 @@ import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.IBundlable;
 import com.watabou.utils.Bundle;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.PointF;
 
 public class Item implements IBundlable {
@@ -568,7 +568,7 @@ public class Item implements IBundlable {
 		final float finalDelay = delay;
 		
 		((MissileSprite)user.sprite.parent.recycle( MissileSprite.class )).
-			reset( user.pos, cell, this, new Callback() {			
+			reset( user.pos, cell, this, new ICallback() {			
 				@Override
 				public void call() {
 					Item.this.detach( user.belongings.backpack ).onThrow( cell );
@@ -579,7 +579,7 @@ public class Item implements IBundlable {
 	
 	protected static Hero curUser = null;
 	protected static Item curItem = null;
-	protected static CellSelector.Listener thrower = new CellSelector.Listener() {	
+	protected static CellSelector.IListener thrower = new CellSelector.IListener() {	
 		@Override
 		public void onSelect( Integer target ) {
 			if (target != null) {

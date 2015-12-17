@@ -38,7 +38,7 @@ import com.watabou.pixeldungeon.levels.Terrain;
 import com.watabou.pixeldungeon.mechanics.Ballistica;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class WandOfReach extends Wand {
 
@@ -121,7 +121,7 @@ public class WandOfReach extends Wand {
 		}
 	}
 	
-	protected void fx( int cell, Callback callback ) {
+	protected void fx( int cell, ICallback callback ) {
 		MagicMissile.force( curUser.sprite.parent, curUser.pos, cell, callback );
 		Sample.INSTANCE.play( Assets.SND_ZAP );
 	}

@@ -47,7 +47,7 @@ import com.watabou.pixeldungeon.windows.WndChallenges;
 import com.watabou.pixeldungeon.windows.WndClass;
 import com.watabou.pixeldungeon.windows.WndMessage;
 import com.watabou.pixeldungeon.windows.WndOptions;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class StartScene extends PixelScene {
 
@@ -229,7 +229,7 @@ public class StartScene extends PixelScene {
 		
 		fadeIn();
 		
-		Badges.loadingListener = new Callback() {
+		Badges.loadingListener = new ICallback() {
 			@Override
 			public void call() {
 				if (Game.scene() == StartScene.this) {

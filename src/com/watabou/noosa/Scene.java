@@ -22,10 +22,10 @@ import com.watabou.utils.Signal;
 
 public class Scene extends Group {
 	
-	private Signal.Listener<Keys.Key> keyListener;
+	private Signal.IListener<Keys.Key> keyListener;
 	
 	public void create() {
-		Keys.event.add( keyListener = new Signal.Listener<Keys.Key>() {
+		Keys.event.add( keyListener = new Signal.IListener<Keys.Key>() {
 			@Override
 			public void onSignal( Keys.Key key ) {
 				if (Game.instance != null && key.pressed) {

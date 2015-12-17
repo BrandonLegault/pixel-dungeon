@@ -32,7 +32,7 @@ import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.pixeldungeon.windows.WndBag;
 import com.watabou.utils.Bundle;
 
-public class QuickSlot extends Button implements WndBag.Listener {
+public class QuickSlot extends Button implements WndBag.IListener {
 
 	private static final String TXT_SELECT_ITEM = "Select an item for the quickslot";
 	

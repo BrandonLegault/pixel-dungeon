@@ -29,7 +29,7 @@ import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.pixeldungeon.sprites.MissileSprite;
 import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class HuntressArmor extends ClassArmor {
 	
@@ -43,7 +43,7 @@ public class HuntressArmor extends ClassArmor {
 		image = ItemSpriteSheet.ARMOR_HUNTRESS;
 	}
 	
-	private HashMap<Callback, Mob> targets = new HashMap<Callback, Mob>();
+	private HashMap<ICallback, Mob> targets = new HashMap<ICallback, Mob>();
 	
 	@Override
 	public String special() {
@@ -58,7 +58,7 @@ public class HuntressArmor extends ClassArmor {
 		for (Mob mob : Dungeon.level.mobs) {
 			if (Level.fieldOfView[mob.pos]) {
 				
-				Callback callback = new Callback() {	
+				ICallback callback = new ICallback() {	
 					@Override
 					public void call() {
 						curUser.attack( targets.get( this ) );

@@ -27,7 +27,7 @@ abstract public class Tweener extends Gizmo {
 	public float interval;
 	public float elapsed;
 	
-	public Listener listener;
+	public IListener listener;
 	
 	public Tweener( Gizmo target, float interval ) {
 		super();
@@ -58,7 +58,7 @@ abstract public class Tweener extends Gizmo {
 	
 	abstract protected void updateValues( float progress );
 	
-	public static interface Listener {
+	public static interface IListener {
 		void onComplete( Tweener tweener );
 	}
 }

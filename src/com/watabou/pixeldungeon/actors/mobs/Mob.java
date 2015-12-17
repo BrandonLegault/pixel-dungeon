@@ -52,12 +52,12 @@ public abstract class Mob extends Char {
 	protected static final String TXT_RAGE		= "#$%^";
 	protected static final String TXT_EXP		= "%+dEXP";
 	
-	public AiState SLEEPEING	= new Sleeping();
-	public AiState HUNTING		= new Hunting();
-	public AiState WANDERING	= new Wandering();
-	public AiState FLEEING		= new Fleeing();
-	public AiState PASSIVE		= new Passive();
-	public AiState state = SLEEPEING;
+	public IAiState SLEEPEING	= new Sleeping();
+	public IAiState HUNTING		= new Hunting();
+	public IAiState WANDERING	= new Wandering();
+	public IAiState FLEEING		= new Fleeing();
+	public IAiState PASSIVE		= new Passive();
+	public IAiState state = SLEEPEING;
 	
 	public Class<? extends CharSprite> spriteClass;
 	
@@ -418,12 +418,12 @@ public abstract class Mob extends Char {
 		GLog.n( "%s: \"%s\" ", name, str );
 	}
 	
-	public interface AiState {
+	public interface IAiState {
 		public boolean act( boolean enemyInFOV, boolean justAlerted );
 		public String status();
 	}
 	
-	private class Sleeping implements AiState {
+	private class Sleeping implements IAiState {
 		
 		public static final String TAG	= "SLEEPING";
 		
@@ -463,7 +463,7 @@ public abstract class Mob extends Char {
 		}
 	}
 	
-	private class Wandering implements AiState {
+	private class Wandering implements IAiState {
 		
 		public static final String TAG	= "WANDERING";
 		
@@ -500,7 +500,7 @@ public abstract class Mob extends Char {
 		}
 	}
 	
-	private class Hunting implements AiState {
+	private class Hunting implements IAiState {
 		
 		public static final String TAG	= "HUNTING";
 		
@@ -539,7 +539,7 @@ public abstract class Mob extends Char {
 		}
 	}
 	
-	protected class Fleeing implements AiState {
+	protected class Fleeing implements IAiState {
 		
 		public static final String TAG	= "FLEEING";
 		
@@ -574,7 +574,7 @@ public abstract class Mob extends Char {
 		}
 	}
 	
-	private class Passive implements AiState {
+	private class Passive implements IAiState {
 		
 		public static final String TAG	= "PASSIVE";
 		

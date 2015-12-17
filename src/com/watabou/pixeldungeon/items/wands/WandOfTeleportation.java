@@ -25,7 +25,7 @@ import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.effects.MagicMissile;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfTeleportation;
 import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class WandOfTeleportation extends Wand {
 
@@ -74,7 +74,7 @@ public class WandOfTeleportation extends Wand {
 		}
 	}
 	
-	protected void fx( int cell, Callback callback ) {
+	protected void fx( int cell, ICallback callback ) {
 		MagicMissile.coldLight( curUser.sprite.parent, curUser.pos, cell, callback );
 		Sample.INSTANCE.play( Assets.SND_ZAP );
 	}

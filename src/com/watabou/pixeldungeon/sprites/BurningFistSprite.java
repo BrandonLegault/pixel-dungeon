@@ -21,7 +21,7 @@ import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.effects.MagicMissile;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class BurningFistSprite extends MobSprite {
 	
@@ -61,7 +61,7 @@ public class BurningFistSprite extends MobSprite {
 
 			Sample.INSTANCE.play( Assets.SND_ZAP );
 			MagicMissile.shadow( parent, ch.pos, posToShoot, 
-				new Callback() {			
+				new ICallback() {			
 					@Override
 					public void call() {
 						ch.onAttackComplete();

@@ -31,7 +31,7 @@ import com.watabou.pixeldungeon.effects.ShadowBox;
 import com.watabou.pixeldungeon.scenes.PixelScene;
 import com.watabou.utils.Signal;
 
-public class Window extends Group implements Signal.Listener<Key> {
+public class Window extends Group implements Signal.IListener<Key> {
 
 	protected int width;
 	protected int height;

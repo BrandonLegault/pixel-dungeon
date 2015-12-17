@@ -308,7 +308,7 @@ public class SurfaceScene extends PixelScene {
 		}
 	}
 	
-	private static class Pet extends MovieClip implements MovieClip.Listener {
+	private static class Pet extends MovieClip implements MovieClip.IListener {
 		
 		private Animation idle;
 		private Animation jump;

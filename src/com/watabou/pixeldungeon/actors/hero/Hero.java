@@ -1215,8 +1215,8 @@ public class Hero extends Char {
 		
 		GameScene.gameOver();
 		
-		if (cause instanceof Hero.Doom) {
-			((Hero.Doom)cause).onDeath();
+		if (cause instanceof Hero.IDoom) {
+			((Hero.IDoom)cause).onDeath();
 		}
 		
 		Dungeon.deleteGame( Dungeon.hero.heroClass, true );
@@ -1417,7 +1417,7 @@ public class Hero extends Char {
 		super.next();
 	}
 	
-	public static interface Doom {
+	public static interface IDoom {
 		public void onDeath();
 	}
 }

@@ -29,7 +29,7 @@ import com.watabou.pixeldungeon.effects.particles.PoisonParticle;
 import com.watabou.pixeldungeon.effects.particles.PurpleParticle;
 import com.watabou.pixeldungeon.effects.particles.ShadowParticle;
 import com.watabou.pixeldungeon.effects.particles.WoolParticle;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.ColorMath;
 import com.watabou.utils.PointF;
 import com.watabou.utils.Random;
@@ -38,17 +38,17 @@ public class MagicMissile extends Emitter {
 
 	private static final float SPEED	= 200f;
 	
-	private Callback callback;
+	private ICallback callback;
 	
 	private float sx;
 	private float sy;
 	private float time;
 	
-	public void reset( int from, int to, Callback callback ) {
+	public void reset( int from, int to, ICallback callback ) {
 		reset( from, to, SPEED, callback );
 	}
 	
-	public void reset( int from, int to, float velocity, Callback callback ) {
+	public void reset( int from, int to, float velocity, ICallback callback ) {
 		this.callback = callback;
 		
 		revive();
@@ -74,82 +74,82 @@ public class MagicMissile extends Emitter {
 		width = height = size;
 	}
 	
-	public static void blueLight( Group group, int from, int to, Callback callback ) {
+	public static void blueLight( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.pour( MagicParticle.FACTORY, 0.01f );
 	}
 	
-	public static void fire( Group group, int from, int to, Callback callback ) {
+	public static void fire( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 4 );
 		missile.pour( FlameParticle.FACTORY, 0.01f );
 	}
 	
-	public static void earth( Group group, int from, int to, Callback callback ) {
+	public static void earth( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 2 );
 		missile.pour( EarthParticle.FACTORY, 0.01f );
 	}
 	
-	public static void purpleLight( Group group, int from, int to, Callback callback ) {
+	public static void purpleLight( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 2 );
 		missile.pour( PurpleParticle.MISSILE, 0.01f );
 	}
 	
-	public static void whiteLight( Group group, int from, int to, Callback callback ) {
+	public static void whiteLight( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 4 );
 		missile.pour( WhiteParticle.FACTORY, 0.01f );
 	}
 	
-	public static void wool( Group group, int from, int to, Callback callback ) {
+	public static void wool( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 3 );
 		missile.pour( WoolParticle.FACTORY, 0.01f );
 	}
 	
-	public static void poison( Group group, int from, int to, Callback callback ) {
+	public static void poison( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 3 );
 		missile.pour( PoisonParticle.MISSILE, 0.01f );
 	}
 	
-	public static void foliage( Group group, int from, int to, Callback callback ) {
+	public static void foliage( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 4 );
 		missile.pour( LeafParticle.GENERAL, 0.01f );
 	}
 	
-	public static void slowness( Group group, int from, int to, Callback callback ) {
+	public static void slowness( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.pour( SlowParticle.FACTORY, 0.01f );
 	}
 	
-	public static void force( Group group, int from, int to, Callback callback ) {
+	public static void force( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 0 );
 		missile.pour( ForceParticle.FACTORY, 0.01f );
 	}
 	
-	public static void coldLight( Group group, int from, int to, Callback callback ) {
+	public static void coldLight( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 4 );
 		missile.pour( ColdParticle.FACTORY, 0.01f );
 	}
 	
-	public static void shadow( Group group, int from, int to, Callback callback ) {
+	public static void shadow( Group group, int from, int to, ICallback callback ) {
 		MagicMissile missile = ((MagicMissile)group.recycle( MagicMissile.class ));
 		missile.reset( from, to, callback );
 		missile.size( 4 );

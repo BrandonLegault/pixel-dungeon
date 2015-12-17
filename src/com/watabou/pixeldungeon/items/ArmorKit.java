@@ -113,7 +113,7 @@ public class ArmorKit extends Item {
 			"depending on his class. No skills in tailoring, leatherworking or blacksmithing are required.";
 	}
 	
-	private final WndBag.Listener itemSelector = new WndBag.Listener() {
+	private final WndBag.IListener itemSelector = new WndBag.IListener() {
 		@Override
 		public void onSelect( Item item ) {
 			if (item != null) {

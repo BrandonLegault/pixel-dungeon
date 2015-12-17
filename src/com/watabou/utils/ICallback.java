@@ -15,12 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.watabou.noosa;
+package com.watabou.utils;
 
-public interface Resizable {
+public interface ICallback {
 
-	public void size( float width, float height );
-	public float width();
-	public float height();
+	void call();
 	
 }

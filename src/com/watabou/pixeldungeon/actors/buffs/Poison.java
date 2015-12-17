@@ -28,7 +28,7 @@ import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.utils.Bundle;
 
-public class Poison extends Buff implements Hero.Doom {
+public class Poison extends Buff implements Hero.IDoom {
 	
 	protected float left;
 	

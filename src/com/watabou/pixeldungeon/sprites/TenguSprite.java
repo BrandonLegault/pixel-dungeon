@@ -22,7 +22,7 @@ import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.items.weapon.missiles.Shuriken;
 import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 
 public class TenguSprite extends MobSprite {
 	
@@ -74,7 +74,7 @@ public class TenguSprite extends MobSprite {
 		if (!Level.adjacent( cell, ch.pos )) {
 			
 			((MissileSprite)parent.recycle( MissileSprite.class )).
-				reset( ch.pos, cell, new Shuriken(), new Callback() {			
+				reset( ch.pos, cell, new Shuriken(), new ICallback() {			
 					@Override
 					public void call() {
 						ch.onAttackComplete();

@@ -24,30 +24,30 @@ import java.util.List;
 
 public class Graph {
 
-	public static <T extends Node> void setPrice( List<T> nodes, int value ) {
+	public static <T extends INode> void setPrice( List<T> nodes, int value ) {
 		for (T node : nodes) {
 			node.price( value );
 		}
 	}
 	
-	public static <T extends Node> void buildDistanceMap( Collection<T> nodes, Node focus ) {
+	public static <T extends INode> void buildDistanceMap( Collection<T> nodes, INode focus ) {
 		
 		for (T node : nodes) {
 			node.distance( Integer.MAX_VALUE );
 		}
 		
-		LinkedList<Node> queue = new LinkedList<Node>();
+		LinkedList<INode> queue = new LinkedList<INode>();
 		
 		focus.distance( 0 );
 		queue.add( focus );
 		
 		while (!queue.isEmpty()) {
 			
-			Node node = queue.poll();
+			INode node = queue.poll();
 			int distance = node.distance();
 			int price = node.price();
 			
-			for (Node edge : node.edges()) {
+			for (INode edge : node.edges()) {
 				if (edge.distance() > distance + price) {
 					queue.add( edge );
 					edge.distance( distance + price );
@@ -57,7 +57,7 @@ public class Graph {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static <T extends Node> List<T> buildPath( Collection<T> nodes, T from, T to ) {
+	public static <T extends INode> List<T> buildPath( Collection<T> nodes, T from, T to ) {
 		
 		List<T> path = new ArrayList<T>();
 		
@@ -67,9 +67,9 @@ public class Graph {
 			int min = room.distance();
 			T next = null;
 			
-			Collection<? extends Node> edges = room.edges();
+			Collection<? extends INode> edges = room.edges();
 			
-			for (Node edge : edges) {
+			for (INode edge : edges) {
 				
 				int distance = edge.distance();
 				if (distance < min) {
@@ -89,7 +89,7 @@ public class Graph {
 		return path;
 	}
 	
-	public interface Node {
+	public interface INode {
 		
 		int distance();
 		void distance( int value );
@@ -97,7 +97,7 @@ public class Graph {
 		int price();
 		void price( int value );
 		
-		Collection<? extends Node> edges();
+		Collection<? extends INode> edges();
 		
 	}
 }

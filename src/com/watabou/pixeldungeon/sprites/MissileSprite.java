@@ -21,21 +21,21 @@ import com.watabou.noosa.tweeners.PosTweener;
 import com.watabou.noosa.tweeners.Tweener;
 import com.watabou.pixeldungeon.DungeonTilemap;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.utils.Callback;
+import com.watabou.utils.ICallback;
 import com.watabou.utils.PointF;
 
-public class MissileSprite extends ItemSprite implements Tweener.Listener {
+public class MissileSprite extends ItemSprite implements Tweener.IListener {
 
 	private static final float SPEED	= 240f;
 	
-	private Callback callback;
+	private ICallback callback;
 	
 	public MissileSprite() {
 		super();
 		originToCenter();
 	}
 	
-	public void reset( int from, int to, Item item, Callback listener ) {
+	public void reset( int from, int to, Item item, ICallback listener ) {
 		if (item == null) {
 			reset( from, to, 0, null, listener );
 		} else {
@@ -43,7 +43,7 @@ public class MissileSprite extends ItemSprite implements Tweener.Listener {
 		}
 	}
 	
-	public void reset( int from, int to, int image, Glowing glowing, Callback listener ) {
+	public void reset( int from, int to, int image, Glowing glowing, ICallback listener ) {
 		revive();
 		
 		view( image, glowing );
