@@ -70,6 +70,7 @@ import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
 import com.watabou.utils.SparseArray;
 
+
 public class Dungeon {
 	
 	public static int potionOfStrength;
