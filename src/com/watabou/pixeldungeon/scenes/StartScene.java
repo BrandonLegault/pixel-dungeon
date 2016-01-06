@@ -65,8 +65,6 @@ public class StartScene extends PixelScene {
 	private static final String TXT_YES		= "Yes, start new game";
 	private static final String TXT_NO		= "No, return to main menu";
 	
-	private static final String TXT_UNLOCK	= "To unlock this character class, slay the 3rd boss with any other class";
-	
 	private static final String TXT_WIN_THE_GAME = 
 		"To unlock \"Challenges\", win the game with any character class.";
 	
@@ -203,25 +201,7 @@ public class StartScene extends PixelScene {
 		add( unlock );
 		
 		huntressUnlocked = true;
-		
-		/*if (!(huntressUnlocked = Badges.isUnlocked( Badges.Badge.BOSS_SLAIN_3 ))) {
-		
-			BitmapTextMultiline text = PixelScene.createMultiline( TXT_UNLOCK, 9 );
-			text.maxWidth = (int)width;
-			text.measure();
-			
-			float pos = (bottom - BUTTON_HEIGHT) + (BUTTON_HEIGHT - text.height()) / 2;
-			for (BitmapText line : text.new LineSplitter().split()) {
-				line.measure();
-				line.hardlight( 0xFFFF00 );
-				line.x = PixelScene.align( w / 2 - line.width() / 2 );
-				line.y = PixelScene.align( pos );
-				unlock.add( line );
 				
-				pos += line.height(); 
-			}
-		}*/
-		
 		ExitButton btnExit = new ExitButton();
 		btnExit.setPos( Camera.main.width - btnExit.width(), 0 );
 		add( btnExit );
