@@ -39,11 +39,8 @@ public class ScrollOfUpgrade extends InventoryScroll {
 	protected void onItemSelected( Item item ) {
 
 		ScrollOfRemoveCurse.uncurse( Dungeon.hero, item );
-		if (item.isBroken()) {
-			item.fix();
-		} else {
-			item.upgrade();
-		}
+					
+		item.upgrade();
 		
 		upgrade( curUser );
 		GLog.p( TXT_LOOKS_BETTER, item.name() );
